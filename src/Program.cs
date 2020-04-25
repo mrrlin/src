@@ -27,7 +27,9 @@ namespace src
                 }
                 else
                 {
-                    Console.WriteLine("Введите номер маршрута больше нуля");
+                    Console.WriteLine("Введите номер маршрута больше нуля: ");
+                    one = Convert.ToInt32(Console.ReadLine());
+                    Routes[i].routeNumber = one;
                 }
 
                 Console.WriteLine("Введите количество остановок: ");
@@ -38,7 +40,9 @@ namespace src
                 }
                 else
                 {
-                    Console.WriteLine("Введите положительное количество остановок");
+                    Console.WriteLine("Введите положительное количество остановок: ");
+                    two = Convert.ToInt32(Console.ReadLine());
+                    Routes[i].numberOfStops = two;
                 }
                 Console.WriteLine("Введите время в пути (в минутах): ");
                 int three = Convert.ToInt32(Console.ReadLine());
@@ -49,11 +53,13 @@ namespace src
                 else
                 {
                     Console.WriteLine("Введите положительное значение времени");
+                    three = Convert.ToInt32(Console.ReadLine());
+                    Routes[i].travelTime = three;
                 }
             }
 
             //вывод массива
-            for(int i=0; i<n; i++)
+            for (int i=0; i<n; i++)
             {
                 Console.WriteLine("Номер маршрута: " + Routes[i].routeNumber);
                 Console.WriteLine("Количество остановок: " + Routes[i].numberOfStops);
