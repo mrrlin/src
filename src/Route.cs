@@ -49,8 +49,8 @@ namespace src
                 foreach(var r in Routes)
                 {
                     route.WriteLine("Номер марштура: " + r.routeNumber
-                                  + "Количество остановок: " + r.numberOfStops
-                                  + "Время в пути: " + r.travelTime);
+                                  + " Количество остановок: " + r.numberOfStops
+                                  + " Время в пути: " + r.travelTime);
                 }
             }
         }
