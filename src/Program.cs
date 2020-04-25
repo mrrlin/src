@@ -12,17 +12,18 @@ namespace src
         {
             Console.WriteLine("Введите размер массива: ");
             int n = int.Parse(Console.ReadLine());
-            int[] Routes = new int[n];
+            Route[] Routes = new Route[n];
 
-            Console.WriteLine("Введите номер маршрута: ");
-            int NumberBus = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите количество остановок: ");
-            int QuantityOfStop = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите время в пути (в минутах): ");
-            int TimeTravel = int.Parse(Console.ReadLine());
-
-            Route One = new Route(NumberBus, QuantityOfStop, TimeTravel);
-
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Введите номер маршрута: ");
+                Routes[i].routeNumber = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите количество остановок: ");
+                Routes[i].numberOfStops = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите время в пути (в минутах): ");
+                Routes[i].travelTime = Convert.ToInt32(Console.ReadLine());
+            }
+            
             Console.ReadKey();
         }
     }
