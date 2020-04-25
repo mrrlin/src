@@ -32,6 +32,8 @@ namespace src
             // сортировка
             Routes.OrderBy(r => r.numberOfStops).ThenBy(r => r.travelTime).ToArray();
 
+            Route.WriteInFile(Routes);
+
             Console.ReadKey();
         }
     }
