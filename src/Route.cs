@@ -42,6 +42,7 @@ namespace src
             travelTime = 0;
         }
 
+        //запись в файл
         public static void WriteInFile(Route[] Routes)
         {
             using(StreamWriter route = new StreamWriter("Routes.txt"))
@@ -53,6 +54,13 @@ namespace src
                                   + " Время в пути: " + r.travelTime);
                 }
             }
+        }
+
+        // сортировка
+        static public Route[] SortOrderBy(Route[] Routes)
+        {
+            Route[] Order = Routes.AsQueryable<Route>().OrderBy(r => r.numberOfStops).ThenBy(r => r.travelTime).ToArray();
+            return Order;
         }
     }
 }
