@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace src
 {
@@ -39,6 +40,19 @@ namespace src
             routeNumber = 0;
             numberOfStops = 0;
             travelTime = 0;
+        }
+
+        public static void WriteInFile(Route[] Routes)
+        {
+            using(StreamWriter route = new StreamWriter("Routes.txt"))
+            {
+                foreach(var r in Routes)
+                {
+                    route.WriteLine("Номер марштура: " + r.routeNumber
+                                  + "Количество остановок: " + r.numberOfStops
+                                  + "Время в пути: " + r.travelTime);
+                }
+            }
         }
     }
 }

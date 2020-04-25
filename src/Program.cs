@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace src
 {
@@ -14,6 +15,7 @@ namespace src
             int n = int.Parse(Console.ReadLine());
             Route[] Routes = new Route[n];
 
+            //заполнение массива
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine("Введите номер маршрута: ");
@@ -26,7 +28,10 @@ namespace src
                 Routes[i] = new Route();
                 Routes[i].travelTime = Convert.ToInt32(Console.ReadLine());
             }
-            
+
+            // сортировка
+            Routes.OrderBy(r => r.numberOfStops).ThenBy(r => r.travelTime).ToArray();
+
             Console.ReadKey();
         }
     }
