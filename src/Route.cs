@@ -14,18 +14,18 @@ namespace src
 
         public int routeNumber 
         { 
-            get => RouteNumber;
-            set => RouteNumber = value;
+            get => this.RouteNumber;
+            set => this.RouteNumber = value;
         }
         public int numberOfStops
         {
-            get => NumberOfStops;
-            set => NumberOfStops = value;
+            get => this.NumberOfStops;
+            set => this.NumberOfStops = value;
         }
         public int travelTime
         {
-            get => TravelTime;
-            set => TravelTime = value;
+            get => this.TravelTime;
+            set => this.TravelTime = value;
         }
 
         public Route(int route_number, int number_of_stops, int travel_time)
@@ -33,6 +33,12 @@ namespace src
             routeNumber = route_number;
             numberOfStops = number_of_stops;
             travelTime = travel_time;
+        }
+        public Route()
+        {
+            routeNumber = 0;
+            numberOfStops = 0;
+            travelTime = 0;
         }
     }
 }

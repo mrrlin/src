@@ -17,10 +17,13 @@ namespace src
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine("Введите номер маршрута: ");
+                Routes[i] = new Route();
                 Routes[i].routeNumber = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите количество остановок: ");
+                Routes[i] = new Route();
                 Routes[i].numberOfStops = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите время в пути (в минутах): ");
+                Routes[i] = new Route();
                 Routes[i].travelTime = Convert.ToInt32(Console.ReadLine());
             }
             
